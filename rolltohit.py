@@ -11,16 +11,24 @@ random.seed()
 
 print("Enter the number of dice and the hit target: ")
 
-DiceCount = int(input("Number of dice: "))
-HitTarget = int(input("Enter the hit target: "))
+YesNo = 'y'
 
-HitCount = 0
-DiceRoll = 0
+while YesNo == 'y' or YesNo == 'Y':
 
-for i in range(DiceCount):
-    DiceRoll = random.randint(1,6)
-    #print(f"DiceRoll: {DiceRoll}")
-    if DiceRoll >= HitTarget:
-        HitCount += 1
+    DiceCount = int(input("Number of dice: "))
+    HitTarget = int(input("Enter the hit target: "))
 
-print(f"You rolled {DiceCount} dice with a hit target of {HitTarget} and hit {HitCount} times.")
+    HitCount = 0
+    DiceRoll = 0
+
+    for i in range(DiceCount):
+        DiceRoll = random.randint(1,6)
+        #print(f"DiceRoll: {DiceRoll}")
+        if DiceRoll >= HitTarget:
+            HitCount += 1
+    #end for loop
+    
+    print(f"You rolled {DiceCount} dice with a hit target of {HitTarget} and hit {HitCount} times.")
+
+    YesNo = input("Do you want to continue? y/n?: ")
+#end while
